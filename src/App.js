@@ -1,7 +1,8 @@
 import "./App.css";
+import LoginBody from "./loginComponents/loginBody";
 
 function App() {
-  return <div>Hello</div>;
+  return <LoginBody />;
 }
 
 export default App;

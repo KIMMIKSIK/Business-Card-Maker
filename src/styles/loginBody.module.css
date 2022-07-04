@@ -1,0 +1,66 @@
+@value makerWhite from '../common/colors.css';
+@value makerBlack from '../common/colors.css';
+
+.mainBody {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+}
+.loginBody {
+  background-color: white;
+  width: 33rem;
+  height: 18rem;
+}
+.loginHeader {
+  background: rgb(17, 87, 110);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  font-size: 30px;
+}
+.loginImage {
+  margin: 3px;
+}
+
+.loginContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 65%;
+  color: black;
+}
+.loginLogo {
+  margin-bottom: 18px;
+  color: Black;
+  font-weight: 500;
+  font-size: 35px;
+}
+.loginButton {
+  margin-bottom: 12px;
+  width: 90%;
+  height: 40px;
+  border: 1px solid rgb(17, 87, 110);
+  border-radius: 17px;
+  font-size: 18px;
+}
+.loginButton:hover {
+  cursor: pointer;
+  box-shadow: inset 5px 5px 3px -3px rgba(0, 0, 0, 0.44);
+}
+
+.loginFooter {
+  background: rgb(17, 87, 110);
+  width: 100%;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 17px;
+}
