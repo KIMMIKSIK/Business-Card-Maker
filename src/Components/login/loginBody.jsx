@@ -1,12 +1,20 @@
 import React from "react";
+import { useState } from "react";
 import styles from "../../styles/login.module.css";
 import Footer from "../footer/footer";
 import Header from "../header/header";
+import { useNavigate } from "react-router-dom";
 const LoginBody = ({ authService }) => {
+  const navigate = useNavigate();
   const onLogin = (e) => {
     authService
       .login(e.currentTarget.textContent) //
-      .then(console.log);
+      .then((res) => {
+        if (res.operationType === "signIn") {
+          console.log(res.user.displayName);
+          navigate("/home");
+        }
+      });
   };
   return (
     <main className={styles.loginBody}>
