@@ -1,9 +1,9 @@
 import {
   getAuth,
   signInWithPopup,
-  GoogleAuthPopup,
   GithubAuthProvider,
   GoogleAuthProvider,
+  signOut,
 } from "firebase/auth";
 
 class AuthService {
@@ -16,6 +16,9 @@ class AuthService {
   login(providerName) {
     const authProvider = this.getProvider(providerName);
     return signInWithPopup(this.firebaseAuth, authProvider);
+  }
+  logout() {
+    return signOut(this.firebaseAuth);
   }
   getProvider(providerName) {
     switch (providerName) {

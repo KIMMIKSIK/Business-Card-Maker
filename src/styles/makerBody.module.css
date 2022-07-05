@@ -1,0 +1,21 @@
+@value makerWhite from '../common/colors.css';
+@value makerBlack from '../common/colors.css';
+@value makerGreen from '../common/colors.css';
+
+.body {
+  width: 85vw;
+  height: 100vh;
+}
+
+.content {
+  height: 85%;
+  background: makerWhite;
+  color: black;
+}
+
+.loginLogo {
+  margin-bottom: 18px;
+  color: Black;
+  font-weight: 500;
+  font-size: 35px;
+}
