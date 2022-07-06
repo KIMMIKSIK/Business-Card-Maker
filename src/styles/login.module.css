@@ -7,12 +7,12 @@
   align-items: center;
   justify-content: center;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   background: rgba(0, 0, 0, 0.3);
 }
 .loginBody {
   background-color: white;
-  width: 35rem;
+  width: 36rem;
   height: 18rem;
 }
 .loginHeader {

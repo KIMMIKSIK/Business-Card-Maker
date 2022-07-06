@@ -4,8 +4,8 @@
 @value mediaSize from '../common/size.css';
 
 .body {
-  width: 85vw;
-  height: 100vh;
+  width: 88vw;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
@@ -25,13 +25,91 @@
 }
 .title {
   margin: 0px;
+  margin-top: 10px;
   font-size: 27px;
 }
 .itemBox {
+  flex-basis: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px dotted lightgrey;
+}
+.ulList {
+  padding: 0px;
+  width: 90%;
+}
+.list {
+  list-style: none;
+}
+.hr {
+  width: 100%;
+  margin: 0px;
+  margin-top: 5px;
+  margin-bottom: 2px;
+  box-sizing: border-box;
+}
+.prePictureBox {
+  flex-basis: 30%;
+  text-align: center;
+}
+.preTitle {
+  font-size: 25px;
+  font-weight: 500;
+}
+.previewBox {
+  display: flex;
+  background: black;
+  align-items: center;
+  margin-bottom: 10px;
+  height: 160px;
+  border-radius: 15px;
+  color: white;
+}
+.prePicture {
+  max-height: 100px;
+  border-radius: 35px;
+}
+.preTextBox {
+  flex-basis: 65%;
+}
+.check {
+  background: pink;
+  color: black;
+}
+.delete {
+  background: makerGreen;
+  color: white;
+}
+.table {
+  width: 100%;
+  margin-bottom: 10px;
+}
+.tr1 {
+  width: 100%;
+  display: flex;
+}
+.tr1 td {
+  padding-left: 5px;
+  height: 33px;
+  flex-grow: 1;
   flex-basis: 50%;
+}
+.td1 {
+  border: 1px solid black;
+}
+.td2 {
+  border: 1px solid black;
+}
+.td3 {
+  border: 1px solid black;
+}
+.td4 {
+  border: 1px solid black;
   display: flex;
   justify-content: center;
-  border: 1px dotted lightgrey;
+  align-items: center;
+  font-weight: 500;
 }
 
 @media screen and (max-width: mediaSize) {
