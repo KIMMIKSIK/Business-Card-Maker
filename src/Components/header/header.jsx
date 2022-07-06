@@ -2,19 +2,20 @@ import React from "react";
 import styles from "../../styles/login.module.css";
 import logo from "../../assets/logo.png";
 import { useNavigate } from "react-router-dom";
-const Header = ({ login, authService }) => {
+const Header = ({ state, authService }) => {
   const navigate = useNavigate();
   const logout = () => {
+    navigate("/");
     authService
       .logout() //
       .then(() => {
         console.log("logout success");
-        navigate("/");
       })
       .catch((e) => {
         console.log(e.message);
       });
   };
+
   return (
     <header>
       <div className={styles.loginHeader}>
@@ -25,7 +26,7 @@ const Header = ({ login, authService }) => {
           height="33px"
         />
         <section>Business Card Maker</section>
-        {login && (
+        {state && (
           <button className={styles.logout} onClick={logout}>
             Logout
           </button>

@@ -1,24 +1,31 @@
-import React from "react";
-import { useState } from "react";
+import React, { useEffect } from "react";
 import styles from "../../styles/login.module.css";
 import Footer from "../footer/footer";
 import Header from "../header/header";
 import { useNavigate } from "react-router-dom";
 const LoginBody = ({ authService }) => {
   const navigate = useNavigate();
+  const goToMaker = (userId) => {
+    navigate("/home", {
+      state: { id: userId },
+    });
+  };
   const onLogin = (e) => {
     authService
       .login(e.currentTarget.textContent) //
-      .then((res) => {
-        if (res.operationType === "signIn") {
-          console.log(res.user.displayName);
-          navigate("/home");
-        }
-      });
+      .then((data) => goToMaker(data.user.uid));
   };
+
+  useEffect(() => {
+    authService.onAuthChange((user) => {
+      user && goToMaker(user.uid);
+      console.log("ggogogo");
+    });
+  }, [authService]);
+
   return (
     <main className={styles.loginBody}>
-      <Header />
+      <Header authService={authService} />
       <section className={styles.loginContent}>
         <div className={styles.loginLogo}>Login</div>
         <button className={styles.loginButton} onClick={onLogin}>

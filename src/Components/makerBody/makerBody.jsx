@@ -1,24 +1,29 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Header from "../header/header";
 import Footer from "../footer/footer";
 import styles from "../../styles/makerBody.module.css";
-import { useState } from "react";
-import { useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import CardMaker from "./cardMaker";
+import CardPreview from "./cardPreview";
 const MakerBody = ({ authService }) => {
-  const [login, setLogin] = useState("");
+  const location = useLocation();
+  const navigate = useNavigate();
   console.log(authService.firebaseAuth.currentUser);
+  console.log(location.state);
   useEffect(() => {
-    if (authService.firebaseAuth.currentUser) {
-      setLogin(authService.firebaseAuth.currentUser.accessToken);
-    }
+    authService.onAuthChange((user) => {
+      if (!user) navigate("/");
+    });
   }, [authService]);
-
   return (
     <>
-      {login ? (
+      {location.state ? (
         <div className={styles.body}>
-          <Header login={login} authService={authService} />
-          <section className={styles.content}>hi</section>
+          <Header state={location.state} authService={authService} />
+          <section className={styles.content}>
+            <CardMaker />
+            <CardPreview />
+          </section>
           <Footer />
         </div>
       ) : (

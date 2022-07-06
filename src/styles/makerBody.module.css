@@ -1,16 +1,20 @@
 @value makerWhite from '../common/colors.css';
 @value makerBlack from '../common/colors.css';
 @value makerGreen from '../common/colors.css';
+@value mediaSize from '../common/size.css';
 
 .body {
   width: 85vw;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .content {
-  height: 85%;
+  flex: 1;
   background: makerWhite;
   color: black;
+  display: flex;
 }
 
 .loginLogo {
@@ -18,4 +22,20 @@
   color: Black;
   font-weight: 500;
   font-size: 35px;
+}
+.title {
+  margin: 0px;
+  font-size: 27px;
+}
+.itemBox {
+  flex-basis: 50%;
+  display: flex;
+  justify-content: center;
+  border: 1px dotted lightgrey;
+}
+
+@media screen and (max-width: mediaSize) {
+  .content {
+    flex-direction: column;
+  }
 }
