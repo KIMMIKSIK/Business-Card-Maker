@@ -1,28 +1,41 @@
 import React from "react";
 import styles from "../../styles/makerBody.module.css";
+import Button from "./button";
+import ImageFileInput from "./imageFileInput";
 const MakerInfo = ({ item }) => {
+  const { name, company, job, email, description, color, fileName, fileURL } =
+    item;
+  const onSubmit = () => {};
   return (
     <li className={styles.list}>
-      <table className={styles.table}>
-        <tr className={styles.tr1}>
-          <td className={styles.td1}>{item.name}</td>
-          <td className={styles.td1}>{item.company}</td>
-          <td className={styles.td1}>{item.color}</td>
-        </tr>
-        <tr className={styles.tr1}>
-          <td className={styles.td2}>{item.job}</td>
-          <td className={styles.td2}>{item.email}</td>
-        </tr>
-        <tr className={styles.tr1}>
-          <td className={styles.td3}>{item.description}</td>
-        </tr>
-        <tr className={styles.tr1}>
-          <td className={`${styles.td4} ${styles.check}`}>
-            {item.name ? item.name : "No File"}
-          </td>
-          <td className={`${styles.td4} ${styles.delete}`}>delete</td>
-        </tr>
-      </table>
+      <form className={styles.form}>
+        <input className={styles.input} type="text" name="name" value={name} />
+        <input
+          className={styles.input}
+          type="text"
+          name="company"
+          value={company}
+        />
+        <select className={styles.select} name="color" value={color}>
+          <option value="light">Light</option>
+          <option value="dark">Dark</option>
+          <option value="colorful">Colorful</option>
+        </select>
+        <input className={styles.input} type="text" name="job" value={job} />
+        <input
+          className={styles.input}
+          type="text"
+          name="email"
+          value={email}
+        />
+        <textarea
+          className={styles.textarea}
+          name="description"
+          value={description}
+        ></textarea>
+        <ImageFileInput />
+        <Button name="Delete" onClick={onSubmit} />
+      </form>
     </li>
   );
 };

@@ -1,8 +1,5 @@
-@value makerWhite from '../common/colors.css';
-@value makerBlack from '../common/colors.css';
-@value makerGreen from '../common/colors.css';
+@value makerWhite, makerBlack, makerShadow, makerPink, makerGreen, makerWheat ,makerColorful from '../common/colors.css';
 @value mediaSize from '../common/size.css';
-
 .body {
   width: 88vw;
   min-height: 100vh;
@@ -34,6 +31,7 @@
   flex-direction: column;
   align-items: center;
   border: 1px dotted lightgrey;
+  background: makerWhite;
 }
 .ulList {
   padding: 0px;
@@ -42,13 +40,7 @@
 .list {
   list-style: none;
 }
-.hr {
-  width: 100%;
-  margin: 0px;
-  margin-top: 5px;
-  margin-bottom: 2px;
-  box-sizing: border-box;
-}
+
 .prePictureBox {
   flex-basis: 30%;
   text-align: center;
@@ -59,20 +51,105 @@
 }
 .previewBox {
   display: flex;
-  background: black;
   align-items: center;
   margin-bottom: 10px;
   height: 160px;
   border-radius: 15px;
   color: white;
+  box-shadow: 5px 5px 8px 0px makerShadow;
 }
+.previewBox.dark {
+  background-color: makerBlack;
+  color: makerWhite;
+}
+.previewBox.light {
+  background-color: makerWhite;
+  border: 0.2px solid makerWheat;
+  color: makerBlack;
+}
+.previewBox.colorful {
+  background: makerColorful;
+  color: makerBlack;
+}
+/* 그라데이션은 그냥 background-color말고 그냥 background써야한다. */
+
 .prePicture {
   max-height: 100px;
-  border-radius: 35px;
+  border-radius: 50%;
 }
 .preTextBox {
   flex-basis: 65%;
 }
+.company::after {
+  content: "";
+  display: block;
+  height: 1px;
+  width: 90%;
+  background-color: makerWheat;
+  margin: 0px;
+  margin-top: 5px;
+  margin-bottom: 2px;
+  box-sizing: border-box;
+}
+.form {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  border-top: 1px solid makerBlack;
+  border-left: 1px solid makerBlack;
+  margin-bottom: 1em;
+}
+.form .button {
+  background-color: makerGreen;
+  color: makerWhite;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0.5rem;
+  flex: 1 1 50%;
+  font-size: 0.8rem;
+}
+.form .fileInput {
+  flex: 1 1 50%;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: bold;
+  background-color: makerPink;
+}
+.form .fileInput:hover {
+  opacity: 0.8;
+}
+.form .button:hover {
+  opacity: 0.8;
+}
+.input,
+.textarea,
+.select,
+.button,
+.fileInput {
+  font-size: 0.8rem;
+  width: 100%;
+  border: 0;
+  padding: 0.5em;
+  border-bottom: 1px solid makerBlack;
+  border-right: 1px solid makerBlack;
+  background: makerWhite;
+}
+.input,
+.select {
+  flex: 1 1 30%;
+}
+.input:focus,
+.textarea:focus,
+.select:focus,
+.button:focus {
+  outline: 0;
+}
+.textarea {
+  flex-basis: 100%;
+}
+
+/* 
+여기서부터 삭제준비 */
 .check {
   background: pink;
   color: black;

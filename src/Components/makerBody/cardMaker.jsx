@@ -8,7 +8,7 @@ const CardMaker = ({ information }) => {
       <h1 className={styles.title}>Card Maker</h1>
       <ul className={styles.ulList}>
         {information.map((item) => (
-          <MakerInfo item={item} key={item.email} />
+          <MakerInfo item={item} key={item.id} />
         ))}
       </ul>
     </section>

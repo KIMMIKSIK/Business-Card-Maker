@@ -9,36 +9,37 @@ import CardPreview from "./cardPreview";
 const MakerBody = ({ authService }) => {
   const [information, setInformation] = useState([
     {
+      id: 1,
       name: "kimminsik",
       company: "hanyang",
       color: "dark",
       job: "engineer",
       email: "weinlove40@gmail.com",
       description: "make your dream!!!",
+      fileName: "msik",
+      fileURL: null,
     },
     {
+      id: 2,
       name: "umicik",
       company: "hanyang",
-      color: "blue",
+      color: "light",
       job: "engineer",
       email: "weinlove60@gmail.com",
       description: "ok!!!!",
+      fileName: "msik",
+      fileURL: "msik.png",
     },
     {
+      id: 3,
       name: "kimjunghui",
       company: "hanyang",
-      color: "pink",
+      color: "colorful",
       job: "singer",
       email: "weinlove70@gmail.com",
       description: "make manners!!!",
-    },
-    {
-      name: "",
-      company: "",
-      color: "",
-      job: "",
-      email: "",
-      description: "",
+      fileName: "msik",
+      fileURL: null,
     },
   ]);
   const location = useLocation();
