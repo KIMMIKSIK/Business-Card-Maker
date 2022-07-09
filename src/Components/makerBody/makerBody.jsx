@@ -6,7 +6,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import CardMaker from "./cardMaker";
 import CardPreview from "./cardPreview";
 
-const MakerBody = ({ authService }) => {
+const MakerBody = ({ authService, FileInput }) => {
   const [information, setInformation] = useState({});
   const location = useLocation();
   const navigate = useNavigate();
@@ -26,6 +26,7 @@ const MakerBody = ({ authService }) => {
             <CardMaker
               information={information}
               setInformation={setInformation}
+              FileInput={FileInput}
             />
             <CardPreview information={information} />
           </section>
@@ -37,5 +38,4 @@ const MakerBody = ({ authService }) => {
     </>
   );
 };
-
 export default MakerBody;

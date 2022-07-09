@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import styles from "../../styles/makerBody.module.css";
-import Button from "..//makerBody/button";
-import ImageFileInput from "../makerBody/imageFileInput";
-const AddCardForm = ({ information, newCard, setItem }) => {
+import Button from "../makerBody/button";
+const AddCardForm = ({ information, newCard, setItem, FileInput }) => {
   const setInfo = {
     name: "",
     company: "",
@@ -76,7 +75,7 @@ const AddCardForm = ({ information, newCard, setItem }) => {
           value={addInfo.description}
           onChange={onChange}
         ></textarea>
-        <ImageFileInput newCard={newCard} />
+        <FileInput newCard={newCard} />
         <Button name="Add" onAdd={onSubmit} />
       </form>
     </li>

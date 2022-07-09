@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "../../styles/makerBody.module.css";
 import Button from "./button";
-import ImageFileInput from "./imageFileInput";
-const MakerInfo = ({ item, setItem, information }) => {
+
+const MakerInfo = ({ item, setItem, information, FileInput }) => {
   const {
     id,
     name,
@@ -55,6 +55,11 @@ const MakerInfo = ({ item, setItem, information }) => {
   //   setItem(updateInfo);
   // };
   // 아래방법은 .map을 사용하게 되는데 내용이 많아지면 성능이 안좋은 알고리즘이 되기 때문에 state를 배열이 아닌 객체형태로 바꾼뒤 키값을 1,2,3등으로 주면서 map으로 돌리지 않아도 되도록 만들었다.
+  const onPost = (e) => {
+    e.preventDefault();
+    console.log("등록합니다");
+  };
+
   return (
     <li className={styles.list}>
       <form className={styles.form}>
@@ -102,7 +107,7 @@ const MakerInfo = ({ item, setItem, information }) => {
           name="description"
           value={description}
         ></textarea>
-        <ImageFileInput />
+        <FileInput />
         <Button name="Delete" onClick={onSubmit} />
       </form>
     </li>

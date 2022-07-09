@@ -76,9 +76,11 @@
 .prePicture {
   max-height: 130px;
   border-radius: 50%;
+  padding-left: 7px;
 }
 .preTextBox {
   flex-basis: 70%;
+  padding-left: 7px;
 }
 .company::after {
   content: "";
