@@ -1,11 +1,9 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import styles from "../../styles/makerBody.module.css";
 import Button from "..//makerBody/button";
 import ImageFileInput from "../makerBody/imageFileInput";
 const AddCardForm = ({ information, newCard, setItem }) => {
-  const idRef = useRef(1);
-  const [addInfo, setAddInfo] = useState({
-    id: idRef.current,
+  const setInfo = {
     name: "",
     company: "",
     color: "dark",
@@ -14,25 +12,15 @@ const AddCardForm = ({ information, newCard, setItem }) => {
     description: "",
     fileName: "",
     fileURL: null,
-  });
+  };
+  const [addInfo, setAddInfo] = useState(setInfo);
   const onChange = (e) => {
-    setAddInfo({ ...addInfo, [e.target.name]: e.target.value });
+    setAddInfo((info) => ({ ...addInfo, [e.target.name]: e.target.value }));
   };
   const onSubmit = (e) => {
     e.preventDefault();
-    idRef.current++;
-    setItem([...information, { ...addInfo, id: idRef.current }]);
-    setAddInfo({
-      id: idRef.current,
-      name: "",
-      company: "",
-      color: "dark",
-      job: "",
-      email: "",
-      description: "",
-      fileName: "",
-      fileURL: null,
-    });
+    setItem({ ...information, [Date.now()]: { ...addInfo, id: Date.now() } });
+    setAddInfo(setInfo);
   };
 
   return (

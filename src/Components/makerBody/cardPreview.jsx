@@ -6,8 +6,8 @@ const CardPreview = ({ information }) => {
     <section className={styles.itemBox}>
       <h1 className={styles.title}>Card Preview</h1>
       <ul className={styles.ulList}>
-        {information.map((item) => (
-          <MakerPre item={item} key={item.id} />
+        {Object.keys(information).map((key) => (
+          <MakerPre item={information[key]} key={key} />
         ))}
       </ul>
     </section>

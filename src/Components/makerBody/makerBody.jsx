@@ -7,7 +7,7 @@ import CardMaker from "./cardMaker";
 import CardPreview from "./cardPreview";
 
 const MakerBody = ({ authService }) => {
-  const [information, setInformation] = useState([]);
+  const [information, setInformation] = useState({});
   const location = useLocation();
   const navigate = useNavigate();
   console.log(authService.firebaseAuth.currentUser);
