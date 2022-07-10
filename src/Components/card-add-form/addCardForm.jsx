@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "../../styles/makerBody.module.css";
 import Button from "../makerBody/button";
-const AddCardForm = ({ information, newCard, setItem, FileInput }) => {
+const AddCardForm = ({ information, setItem, FileInput }) => {
   const setInfo = {
     name: "",
     company: "",
@@ -14,12 +14,19 @@ const AddCardForm = ({ information, newCard, setItem, FileInput }) => {
   };
   const [addInfo, setAddInfo] = useState(setInfo);
   const onChange = (e) => {
-    setAddInfo((info) => ({ ...addInfo, [e.target.name]: e.target.value }));
+    setAddInfo((info) => ({ ...info, [e.target.name]: e.target.value }));
   };
   const onSubmit = (e) => {
     e.preventDefault();
     setItem({ ...information, [Date.now()]: { ...addInfo, id: Date.now() } });
     setAddInfo(setInfo);
+  };
+  const onFileChange = (item) => {
+    if (item.name.length > 4) {
+      item.name = item.name.substr(0, 4);
+    }
+    const { name, url } = item;
+    setAddInfo((info) => ({ ...info, fileName: name, fileURL: url }));
   };
 
   return (
@@ -75,7 +82,7 @@ const AddCardForm = ({ information, newCard, setItem, FileInput }) => {
           value={addInfo.description}
           onChange={onChange}
         ></textarea>
-        <FileInput newCard={newCard} />
+        <FileInput name={addInfo.fileName} onFileChange={onFileChange} />
         <Button name="Add" onAdd={onSubmit} />
       </form>
     </li>

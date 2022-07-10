@@ -110,24 +110,33 @@
   flex: 1 1 50%;
   font-size: 0.8rem;
 }
-.form .fileInput {
-  flex: 1 1 50%;
+.form .fileButton {
+  color: black;
   cursor: pointer;
   font-size: 0.8rem;
   font-weight: bold;
   background-color: makerPink;
 }
-.form .fileInput:hover {
+.form .fileContainer {
+  display: flex;
+  width: 100%;
+  flex: 1 1 50%;
+}
+.form .fileUploaderInput {
+  display: none;
+}
+.form .fileButton:hover {
   opacity: 0.8;
 }
 .form .button:hover {
   opacity: 0.8;
 }
+
 .input,
 .textarea,
 .select,
 .button,
-.fileInput {
+.fileButton {
   font-size: 0.8rem;
   width: 100%;
   border: 0;
