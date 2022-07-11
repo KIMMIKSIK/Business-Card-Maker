@@ -1,7 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "../../styles/makerBody.module.css";
 import Button from "../makerBody/button";
-const AddCardForm = ({ information, setItem, FileInput }) => {
+const AddCardForm = ({
+  information,
+  setItem,
+  FileInput,
+  cardRepository,
+  userId,
+}) => {
   const setInfo = {
     name: "",
     company: "",
@@ -18,9 +24,15 @@ const AddCardForm = ({ information, setItem, FileInput }) => {
   };
   const onSubmit = (e) => {
     e.preventDefault();
-    setItem({ ...information, [Date.now()]: { ...addInfo, id: Date.now() } });
+    const card = { ...addInfo, id: Date.now() };
+    setItem({
+      ...information,
+      [card.id]: card,
+    });
+    cardRepository.saveCard(userId, card);
     setAddInfo(setInfo);
   };
+
   const onFileChange = (item) => {
     if (item.name.length > 4) {
       item.name = item.name.substr(0, 4);

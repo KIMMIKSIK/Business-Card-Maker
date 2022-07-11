@@ -3,7 +3,7 @@ import LoginBody from "./Components/login/loginBody";
 import styles from "./styles/login.module.css";
 import MakerBody from "./Components/makerBody/makerBody";
 import { Routes, Route } from "react-router-dom";
-function App({ authService, FileInput }) {
+function App({ authService, FileInput, cardRepository }) {
   return (
     <div className={styles.mainBody}>
       <Routes>
@@ -11,7 +11,11 @@ function App({ authService, FileInput }) {
         <Route
           path="/home"
           element={
-            <MakerBody authService={authService} FileInput={FileInput} />
+            <MakerBody
+              authService={authService}
+              FileInput={FileInput}
+              cardRepository={cardRepository}
+            />
           }
         />
       </Routes>

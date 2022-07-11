@@ -2,7 +2,14 @@ import styles from "../../styles/makerBody.module.css";
 import AddCardForm from "../card-add-form/addCardForm";
 import MakerInfo from "./makerInfo";
 
-const CardMaker = ({ information, setInformation, myImage, FileInput }) => {
+const CardMaker = ({
+  information,
+  setInformation,
+  myImage,
+  FileInput,
+  cardRepository,
+  userId,
+}) => {
   return (
     <section className={styles.itemBox}>
       <h1 className={styles.title}>Card Maker</h1>
@@ -14,6 +21,8 @@ const CardMaker = ({ information, setInformation, myImage, FileInput }) => {
             key={key}
             setItem={setInformation}
             FileInput={FileInput}
+            cardRepository={cardRepository}
+            userId={userId}
           />
         ))}
         <AddCardForm
@@ -21,6 +30,8 @@ const CardMaker = ({ information, setInformation, myImage, FileInput }) => {
           information={information}
           setItem={setInformation}
           FileInput={FileInput}
+          cardRepository={cardRepository}
+          userId={userId}
         />
       </ul>
     </section>

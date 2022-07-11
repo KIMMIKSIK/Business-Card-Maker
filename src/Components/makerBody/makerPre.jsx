@@ -2,7 +2,7 @@ import React from "react";
 import styles from "../../styles/makerBody.module.css";
 import picture from "../../assets/react.png";
 
-const MakerPre = ({ item }) => {
+const MakerPre = React.memo(({ item }) => {
   const { name, company, job, email, description, color, fileURL } = item;
   const DEFAULT_IMAGE = picture;
   const url = fileURL || DEFAULT_IMAGE;
@@ -24,18 +24,18 @@ const MakerPre = ({ item }) => {
       </section>
     </li>
   );
-  function getStyles(color) {
-    switch (color) {
-      case "dark":
-        return styles.dark;
-      case "light":
-        return styles.light;
-      case "colorful":
-        return styles.colorful;
-      default:
-        throw new Error(`unknown theme: ${color}`);
-    }
+});
+function getStyles(color) {
+  switch (color) {
+    case "dark":
+      return styles.dark;
+    case "light":
+      return styles.light;
+    case "colorful":
+      return styles.colorful;
+    default:
+      throw new Error(`unknown theme: ${color}`);
   }
-};
+}
 
 export default MakerPre;

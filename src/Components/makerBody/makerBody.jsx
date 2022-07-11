@@ -6,17 +6,31 @@ import { useLocation, useNavigate } from "react-router-dom";
 import CardMaker from "./cardMaker";
 import CardPreview from "./cardPreview";
 
-const MakerBody = ({ authService, FileInput }) => {
+const MakerBody = ({ authService, FileInput, cardRepository }) => {
   const [information, setInformation] = useState({});
   const location = useLocation();
   const navigate = useNavigate();
-  console.log(authService.firebaseAuth.currentUser);
-  console.log(location.state);
+  const locationState = location?.state;
+  // 옵셔널 체이닝 연산자
+  const [userId, setUserId] = useState(locationState && locationState.id);
+  useEffect(() => {
+    if (!userId) {
+      return;
+    }
+
+    const stopSync = cardRepository.syncCards(userId, (cards) => {
+      setInformation(cards);
+    });
+    return () => stopSync();
+  }, [userId, cardRepository]);
+
   useEffect(() => {
     authService.onAuthChange((user) => {
-      if (!user) navigate("/");
+      if (user) setUserId(user.uid);
+      else navigate("/");
     });
-  }, [authService]);
+  }, [authService, navigate]);
+  // useState는 얕은 비교를 수행!
   return (
     <>
       {location.state ? (
@@ -27,6 +41,8 @@ const MakerBody = ({ authService, FileInput }) => {
               information={information}
               setInformation={setInformation}
               FileInput={FileInput}
+              cardRepository={cardRepository}
+              userId={userId}
             />
             <CardPreview information={information} />
           </section>

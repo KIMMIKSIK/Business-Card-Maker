@@ -2,7 +2,7 @@
 @value mediaSize from '../common/size.css';
 .body {
   width: 88vw;
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
 }
@@ -12,6 +12,7 @@
   background: makerWhite;
   color: black;
   display: flex;
+  overflow: hidden;
 }
 
 .loginLogo {
@@ -26,6 +27,7 @@
   font-size: 27px;
 }
 .itemBox {
+  overflow-y: auto;
   flex-basis: 60%;
   display: flex;
   flex-direction: column;

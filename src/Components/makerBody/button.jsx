@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "../../styles/makerBody.module.css";
-const Button = ({ name, onClick, onAdd }) => {
+const Button = React.memo(({ name, onClick, onAdd }) => {
   return (
     <button
       className={styles.button}
@@ -9,6 +9,6 @@ const Button = ({ name, onClick, onAdd }) => {
       {name}
     </button>
   );
-};
+});
 
 export default Button;

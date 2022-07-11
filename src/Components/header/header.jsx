@@ -2,17 +2,13 @@ import React from "react";
 import styles from "../../styles/login.module.css";
 import logo from "../../assets/logo.png";
 import { useNavigate } from "react-router-dom";
-const Header = ({ state, authService }) => {
+const Header = React.memo(({ state, authService }) => {
   const navigate = useNavigate();
   const logout = () => {
-    navigate("/");
     authService
       .logout() //
       .then(() => {
-        console.log("logout success");
-      })
-      .catch((e) => {
-        console.log(e.message);
+        navigate("/");
       });
   };
 
@@ -34,6 +30,6 @@ const Header = ({ state, authService }) => {
       </div>
     </header>
   );
-};
+});
 
 export default Header;

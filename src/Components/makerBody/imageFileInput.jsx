@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import styles from "../../styles/makerBody.module.css";
-const ImageFileInput = ({ imageUploader, name, onFileChange }) => {
+const ImageFileInput = React.memo(({ imageUploader, name, onFileChange }) => {
   const [loading, setLoading] = useState(false);
   const inputRef = useRef();
 
@@ -43,6 +43,6 @@ const ImageFileInput = ({ imageUploader, name, onFileChange }) => {
       {loading && <div className={styles.loading}></div>}
     </div>
   );
-};
+});
 
 export default ImageFileInput;

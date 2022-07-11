@@ -13,15 +13,16 @@ const LoginBody = ({ authService }) => {
   const onLogin = (e) => {
     authService
       .login(e.currentTarget.textContent) //
-      .then((data) => goToMaker(data.user.uid));
+      .then((data) => {
+        return goToMaker(data.user.uid);
+      });
   };
 
   useEffect(() => {
     authService.onAuthChange((user) => {
       user && goToMaker(user.uid);
-      console.log("ggogogo");
     });
-  }, [authService]);
+  });
 
   return (
     <main className={styles.loginBody}>
