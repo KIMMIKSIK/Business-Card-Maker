@@ -3,17 +3,7 @@ import styles from "../../styles/makerBody.module.css";
 import Button from "./button";
 
 const MakerInfo = ({ item, setItem, information, FileInput }) => {
-  const {
-    id,
-    name,
-    company,
-    job,
-    email,
-    description,
-    color,
-    fileName,
-    fileURL,
-  } = item;
+  const { id, name, company, job, email, description, color, fileName } = item;
   const onSubmit = (e) => {
     e.preventDefault();
     const deleteInfo = { ...information };

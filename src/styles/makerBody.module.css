@@ -1,4 +1,4 @@
-@value makerWhite, makerBlack, makerShadow, makerPink, makerGreen, makerWheat ,makerColorful from '../common/colors.css';
+@value makerWhite, makerBlack, makerLightGrey, makerShadow, makerPink, makerGreen, makerWheat ,makerColorful from '../common/colors.css';
 @value mediaSize from '../common/size.css';
 .body {
   width: 88vw;
@@ -109,19 +109,27 @@
   padding: 0.5rem;
   flex: 1 1 50%;
   font-size: 0.8rem;
+  box-sizing: border-box;
 }
 .form .fileButton {
   color: black;
   cursor: pointer;
   font-size: 0.8rem;
   font-weight: bold;
+  height: 100%;
   background-color: makerPink;
+  width: 100%;
+  border: 0;
 }
 .form .fileContainer {
   display: flex;
-  width: 100%;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
   flex: 1 1 50%;
+  padding: 0px;
 }
+
 .form .fileUploaderInput {
   display: none;
 }
@@ -136,7 +144,7 @@
 .textarea,
 .select,
 .button,
-.fileButton {
+.fileContainer {
   font-size: 0.8rem;
   width: 100%;
   border: 0;
@@ -159,49 +167,25 @@
   flex-basis: 100%;
 }
 
-/* 
-여기서부터 삭제준비 */
-.check {
-  background: pink;
-  color: black;
-}
-.delete {
-  background: makerGreen;
-  color: white;
-}
-.table {
-  width: 100%;
-  margin-bottom: 10px;
-}
-.tr1 {
-  width: 100%;
-  display: flex;
-}
-.tr1 td {
-  padding-left: 5px;
-  height: 33px;
-  flex-grow: 1;
-  flex-basis: 50%;
-}
-.td1 {
-  border: 1px solid black;
-}
-.td2 {
-  border: 1px solid black;
-}
-.td3 {
-  border: 1px solid black;
-}
-.td4 {
-  border: 1px solid black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: 500;
+.loading {
+  width: 1.2em;
+  height: 1.2em;
+  border-radius: 50%;
+  border: 3px solid makerLightGrey;
+  border-top: 3px solid makerPink;
+  animation: spin 2s linear infinite;
 }
 
 @media screen and (max-width: mediaSize) {
   .content {
     flex-direction: column;
+  }
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
