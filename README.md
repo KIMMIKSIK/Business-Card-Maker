@@ -1,7 +1,7 @@
 <h1># 리액트 프로젝트 세번째 연습</h1>
 <h3>Msik Business Card Maker</h3>
 
-배포 링크 :
+🚀배포 링크 :
 <br>
 
 <div style="display:flex">
@@ -122,7 +122,7 @@ export default ImageUploader;
 
 ---
 
-## 기술 스택
+## 🛠기술 스택
 
 <table>
   <tr height="130px">
@@ -141,7 +141,7 @@ export default ImageUploader;
   </tr>
 </table>
 
-## tree
+## 📁프로젝트 구조
 
   <img src="./src/assets/tree.png" style="width: 500px"/>
 
