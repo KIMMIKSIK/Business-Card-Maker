@@ -11,7 +11,7 @@ const MakerPre = React.memo(({ item }) => {
     <li className={styles.list}>
       <section className={`${styles.previewBox} ${getStyles(color)}`}>
         <article className={styles.prePictureBox}>
-          <img src={url} className={styles.prePicture} alt={"profile photo"} />
+          <img src={url} className={styles.prePicture} alt={"profile"} />
         </article>
         <div className={styles.preTextBox}>
           <section className={styles.preTitle}>{name}</section>
