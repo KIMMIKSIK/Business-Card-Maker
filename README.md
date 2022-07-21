@@ -152,5 +152,5 @@ export default ImageUploader;
 ---
 
 - 추가 학습 : 
-1) firebase에서 netlify로 만들어진 도메인 주소의 authentication(승인된 도메인 주소)를 추가해야만 배포 사이트에서 firebase를 사용핤 수 있었다.
+1) firebase에서 netlify로 만들어진 도메인 주소의 authentication(승인된 도메인 주소)를 추가해야만 배포 사이트에서 firebase를 사용할  있었다.
 2) netlify 첫 배포후 .env파일의 환경변수를 build&deploy -> environment를 통해 다시 설정해주고 재 build를 실시하여 환경변수 정보를 가져올 수 있었다. 
