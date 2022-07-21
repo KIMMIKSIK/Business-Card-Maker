@@ -147,3 +147,10 @@ export default ImageUploader;
 
 - 윈도우에서 트리 사용하기 참조: https://velog.io/@jeongjae96/Windows-Git-Bash%EC%97%90%EC%84%9C-tree-%EB%AA%85%EB%A0%B9%EC%96%B4-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0
 - tree 명령어에서 일부 제외하길 원할때 : https://m.blog.naver.com/foxez/221411283235
+
+
+---
+
+- 추가 학습 : 
+1) firebase에서 netlify로 만들어진 도메인 주소의 authentication(승인된 도메인 주소)를 추가해야만 배포 사이트에서 firebase를 사용핤 수 있었다.
+2) netlify 첫 배포후 .env파일의 환경변수를 build&deploy -> environment를 통해 다시 설정해주고 재 build를 실시하여 환경변수 정보를 가져올 수 있었다. 
