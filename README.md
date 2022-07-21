@@ -5,8 +5,8 @@
 <br>
 
 <div style="display:flex">
-<img src="./src/assets/login.png" style="height: 300px; margin-right:10px;"/>
-<img src="./src/assets/main.png" style="height: 300px"/>
+<img src="./src/assets/login.png" style="height: 320px; margin-right:10px;"/>
+<img src="./src/assets/main.png" style="height: 320px"/>
 </div>
 
 ##### 이번 프로젝트는 firebase의 realtime database기능과 Authentication기능을 사용하여 제작한 명함 만들기 어플입니다. firebase를 사용해보았고 여러가지로 업그레이드 된 내용이 많아서 검색하면서도 많은 어려움을 느꼈던 것 같습니다. 추가로 cloudinary라고 하는 이미지를 업로드 할 수 있는 서비스를 통해 사용자가 업로드 하고자 하는 image를 간편하게 이용할 수 있는 기술을 배울 수 있었습니다. firebase는 기능을 많이 사용하여 sdk를 설치하였고 cloudinary의 경우 사용하는 내용이 많지 않아서 일반 api code를 받아와서 사용하였습니다.
@@ -118,7 +118,7 @@ export default ImageUploader;
 ```
 
 - cloudinary의 Upload Manipulations를 통해 업로드하고자 하는 이미지의 format, size 등 다양한 transformation이 가능합니다.
-  <img src="./src/assets/image-uploader.png" style="height: 320px"/>
+  <img src="./src/assets/image-uploader.png" style="height: 350px"/>
 
 ---
 
@@ -143,7 +143,7 @@ export default ImageUploader;
 
 ## tree
 
-  <img src="./src/assets/tree.png" style="height: 320px"/>
+  <img src="./src/assets/tree.png" style="width: 500px"/>
 
 - 윈도우에서 트리 사용하기 참조: https://velog.io/@jeongjae96/Windows-Git-Bash%EC%97%90%EC%84%9C-tree-%EB%AA%85%EB%A0%B9%EC%96%B4-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0
 - tree 명령어에서 일부 제외하길 원할때 : https://m.blog.naver.com/foxez/221411283235
