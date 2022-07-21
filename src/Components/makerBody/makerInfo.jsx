@@ -13,18 +13,6 @@ const MakerInfo = React.memo(
       delete deleteInfo[id];
       setItem(deleteInfo);
     };
-    // const onSubmit = (e) => {
-    //   e.preventDefault();
-    //   const deleteInfo = [...information];
-    //   deleteInfo.map((item) => {
-    //     if (item.id === id) {
-    //       const index = deleteInfo.indexOf(item);
-    //       deleteInfo.splice(index, 1);
-    //     }
-    //   });
-
-    //   setItem(deleteInfo);
-    // };
 
     const onChange = (e) => {
       const updateInfo = {
